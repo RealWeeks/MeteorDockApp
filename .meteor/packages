@@ -10,3 +10,4 @@ insecure
 iron:router
 twbs:bootstrap
 http
+jquery

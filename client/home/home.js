@@ -1,15 +1,9 @@
-if (Meteor.isServer) {
-    Meteor.methods({
-        checkTwitter: function () {
-            this.unblock();
-            return Meteor.http.call("GET", "http://jsonplaceholder.typicode.com/posts");
-        }
-    });
-}
-
-//invoke the server method
-if (Meteor.isClient) {
-    Meteor.call("checkTwitter", function(error, results) {
-        console.log(results); //results.data should be a JSON object
-    });
-}
+Template.layout.currentnews = function(){
+  var news = Session.get('news');
+  Meteor.call('getNews',news,function(err, results){
+    console.log(results.content);
+    console.log('hello from currentnews function');
+    Session.set('news', JSON.parse(results.content));
+  });
+  return Session.get('news');
+};
