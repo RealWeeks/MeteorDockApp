@@ -9,10 +9,12 @@
     </select>
       <h1>news:<small>{{currentnews}}</small></h1>
   </div>
+  {{#if currentUser}}
   <div class="well well-large">
     <label for="commenttext">Comment</label>
     <input placeholder="What do you think?" class="input-large commenttext" type="text" name="commenttext" value="" id="commenttext">
   </div>
+  {{/if}}
   <ul id="commentList" class="unstyled">
     {{>comment}}
   </ul>

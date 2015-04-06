@@ -28,8 +28,9 @@ Template.home.events({
   'keyup .commenttext' : function(evnt, templ){
     if(evnt.which === 13){
       // 13 is the char number for enter
-      var commenttext = templ.find('commenttext').value;
-      Comments.insert({text:commenttext,owner:Meter.userId(),date:new Date(), parent:null});
+      var commenttext = templ.find('commenttext').value();
+      var options = {text:commenttext, parent:null};
+      Meteor.call('addComment', options);
       //inserts comment into DB with text, userId, a new date and post/comments
       $('.commenttext').val("").select().focus();
     }
