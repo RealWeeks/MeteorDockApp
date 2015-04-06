@@ -2,7 +2,7 @@
   <div class="page-header">
     <h1>Home</h1>
     You are home!
-    <select class="news">
+    <select class="subject">
       <option>sports</option>
       <option>politics</option>
       <option>business</option>
@@ -13,4 +13,7 @@
     <label for="commenttext">Comment</label>
     <input placeholder="What do you think?" class="input-large commenttext" type="text" name="commenttext" value="" id="commenttext">
   </div>
+  <ul id="commentList" class="unstyled">
+    {{>comment}}
+  </ul>
 </template>
