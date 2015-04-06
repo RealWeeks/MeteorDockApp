@@ -9,3 +9,6 @@ iron:router
 twbs:bootstrap
 http
 jquery
+accounts-base
+accounts-password
+accounts-ui

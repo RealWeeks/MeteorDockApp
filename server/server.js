@@ -3,3 +3,8 @@ Meteor.methods({
     return Meteor.http.call('GET', 'http://content.guardianapis.com/search?api-key=test&q='+ subject);
   }
 });
+
+//instead of inscure
+Meteor.publish("comments", function(userId){
+  return Comments.find({});
+});
