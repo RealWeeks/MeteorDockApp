@@ -1,16 +1,23 @@
 <template name="comment">
   <div class="media">
     <a class="pull-left" href="#">
-      <img width="50px" src="max_b.jpg" class="media-object" data-src="holder.js/64x64">
+      <img width="50px" src="max_b.jpg" class="media-object" data-src="{{owner}}.js/64x64">
     </a>
     <div class="media-body">
-      <h5>Person name</h5>
-      <p>Person Comment</p>
+      <h5>{{_id}}</h5>
+      <p>{{text}}</p>
       <h4 class="media-heading"></h4>
       <div class="media">
+      <span class="votes">No </span>Votes
+        <h6 class="media-heading">
+          <a class="voteButton">Vote</a>
+        </h6>
         <ul class="unstyled">
+        {{#each commentComment}}
           {{>commentcomment}}
+        {{/each}}
         </ul>
+        <input type="text" class="comments" placeholder="leave a comment" name="commentNote" id="commentNote">
       </div>
     </div>
   </div>
@@ -19,9 +26,9 @@
 <template name="commentcomment">
   <li class="well">
     <a class="pull-left" href="/user">
-      <img src="/jason_smile.jpg" width="30px" class="img-rounded" alt="#" />
+      <img src="jason_smile.jpg" width="30px" class="img-rounded" alt="#" />
     </a>
-    <h5 class="commentUser">Comment Person name</h5>
-    <p class="commentText">Comment Text here </p>
+    <h5 class="commentUser">{{owner}}</h5>
+    <p class="commentText">{{text}}</p>
   </li>
 </template>

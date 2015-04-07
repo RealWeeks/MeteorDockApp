@@ -16,6 +16,8 @@
   </div>
   {{/if}}
   <ul id="commentList" class="unstyled">
+    {{#each comments}}
     {{>comment}}
+    {{/each}}
   </ul>
 </template>
