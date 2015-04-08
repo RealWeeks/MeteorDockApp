@@ -4,19 +4,19 @@
     <h4>Online Users</h4>
     <ul class="unstyled onlusers">
       {{#each onlusr}}
-        <li class="user">test<a href="#">{{username}}</a></li>
+        <li class="user"><a href="#">{{username}}</a></li>
       {{/each}}
     </ul>
   </div>
   <div class="jumbotron">
     <div class="container">
+      {{>input}}
       {{>messages}}
     </div>
   </div>
 </template>
 
 <template name="messages">
-YO!
   {{#each msgs}}
     <strong>{{name}}</strong> {{text}}<br>
   {{/each}}
