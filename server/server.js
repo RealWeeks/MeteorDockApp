@@ -18,9 +18,6 @@ Meteor.publish("onlusers",function(){
   return Meteor.users.find({"status.online":true},{username:1});
 });
 
-Meteor.publish("votes", function(){
-  return Votes.find({});
-});
 
 Meteor.methods({
   'addComment':function(options){

@@ -2,10 +2,6 @@ Accounts.ui.config({
    passwordSignupFields: 'USERNAME_ONLY'
 });
 
-Template.comment.voteCount = function(){
-  return Votes.find(this._id).count();
-};
-
 
 Template.comment.commentComment = function(){
   return Comments.find({parent:this._id});

@@ -3,4 +3,3 @@ Comments = new Mongo.Collection('comments');
 
 ChatRooms = new Mongo.Collection("chatrooms");
 
-Votes = new Mongo.Collection("votes");
