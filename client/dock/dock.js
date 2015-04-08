@@ -59,7 +59,7 @@ Template.input.events={
           message.value ="";
         }
       }else{
-      alert("LOGIN!");
+      alert("Sorry, you must be logged in to send messages");
       }
       //checked to see if logged in ^
     }
