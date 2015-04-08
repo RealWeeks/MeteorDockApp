@@ -1,3 +1,7 @@
+Accounts.ui.config({
+   passwordSignupFields: 'USERNAME_ONLY'
+});
+
 Template.comment.voteCount = function(){
   return Votes.find(this._id).count();
 };

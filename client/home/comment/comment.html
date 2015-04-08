@@ -4,7 +4,7 @@
       <img width="50px" src="max_b.jpg" class="media-object" data-src="{{owner}}.js/64x64">
     </a>
     <div class="media-body">
-      <h5>{{_id}}</h5>
+      <h5>{{currentUser.username}}</h5>
       <p>{{text}}</p>
       <h4 class="media-heading"></h4>
       <div class="media">
@@ -28,7 +28,7 @@
     <a class="pull-left" href="/user">
       <img src="jason_smile.jpg" width="30px" class="img-rounded" alt="#" />
     </a>
-    <h5 class="commentUser">{{owner}}</h5>
+    <h5 class="commentUser">{{currentUser.username}}</h5>
     <p class="commentText">{{text}}</p>
   </li>
 </template>

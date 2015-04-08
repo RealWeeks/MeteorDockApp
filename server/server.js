@@ -29,12 +29,4 @@ Meteor.methods({
   'removeAllComments': function(){
     Comments.remove({});
   }
-  // 'addVote':function(){
-  //   var vote = 0;
-  //   vote += 1;
-  // }
 });
-
-
-
-

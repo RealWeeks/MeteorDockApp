@@ -9,6 +9,8 @@ iron:router
 twbs:bootstrap
 http
 jquery
-accounts-base
 accounts-password
+accounts-facebook
+service-configuration
 accounts-ui
+accounts-base
