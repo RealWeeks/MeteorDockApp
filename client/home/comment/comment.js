@@ -25,3 +25,20 @@ Template.comment.events({
   }
 });
 
+Template.comment.events({
+  'click': function () {
+    Session.set("selected_vote", this._id);
+  },
+  'click a.yes' : function(e) {
+    e.preventDefault();
+    var commentId = Session.get('selected_vote');
+    console.log('updating yes count for commentId '+commentId);
+    Meteor.call("incrementYesVotes",commentId);
+  },
+  'click a.no': function(e) {
+    e.preventDefault();
+    var commentId = Session.get('selected_vote');
+    console.log('updating no count for commentId '+commentId);
+    Meteor.call("incrementNoVotes",commentId);
+  }
+});

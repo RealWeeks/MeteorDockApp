@@ -7,12 +7,10 @@
     <div class="media-body">
       <h5>{{currentUser.username}}</h5>
       <p>{{text}}</p>
+        <a class="btn btn-xs btn-success yes" href="#"><i class="icon-thumbs-up"></i> Yes {{yes}}</a>
+        <a class="btn btn-xs btn-primary no" href="#"><i class="icon-thumbs-down"></i> No {{no}}</a>
       <h4 class="media-heading"></h4>
       <div class="media">
-      <span class="votes">No </span>Votes
-        <h6 class="media-heading">
-          <a class="voteButton">Vote</a>
-        </h6>
         <ul class="unstyled">
         {{#each commentComment}}
           {{>commentcomment}}

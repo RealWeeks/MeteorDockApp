@@ -9,9 +9,6 @@ Meteor.publish("comments", function(userid){
   return Comments.find({});
 });
 
-Meteor.publish("votes",function(commentid){
-  return Votes.find({comment:commentid});
-});
 
 Meteor.publish("chatrooms",function(){
   return ChatRooms.find({});
@@ -19,6 +16,10 @@ Meteor.publish("chatrooms",function(){
 
 Meteor.publish("onlusers",function(){
   return Meteor.users.find({"status.online":true},{username:1});
+});
+
+Meteor.publish("votes", function(){
+  return Votes.find({});
 });
 
 Meteor.methods({
@@ -53,3 +54,15 @@ Meteor.startup(function(){
     }
   });
 });
+
+Meteor.methods({
+  incrementYesVotes : function(commentId){
+    console.log(commentId);
+    Comments.update(commentId,{$inc : {'yes':1}});
+  },
+  incrementNoVotes : function(commentId){
+    console.log(commentId);
+    Comments.update(commentId,{$inc : {'no':1}});
+  }
+});
+//inc increases or decresed field by 1
