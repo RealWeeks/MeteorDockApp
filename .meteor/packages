@@ -10,7 +10,6 @@ twbs:bootstrap
 http
 jquery
 accounts-password
-accounts-facebook
-service-configuration
 accounts-ui
 accounts-base
+mizzao:user-status

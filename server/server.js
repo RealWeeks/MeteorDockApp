@@ -13,6 +13,14 @@ Meteor.publish("votes",function(commentid){
   return Votes.find({comment:commentid});
 });
 
+Meteor.publish("chatrooms",function(){
+  return ChatRooms.find({});
+});
+
+Meteor.publish("onlusers",function(){
+  return Meteor.users.find({"status.online":true},{username:1});
+});
+
 Meteor.methods({
   'addComment':function(options){
     var comment = {
@@ -29,4 +37,19 @@ Meteor.methods({
   'removeAllComments': function(){
     Comments.remove({});
   }
+});
+
+//boilerplate Meteor startup
+Meteor.startup(function(){
+  ChatRooms.allow({
+    'insert':function(userId,doc){
+      return true;
+    },
+    'update':function(userId,doc,fieldNames, modifier){
+      return true;
+    },
+    'remove':function(userId,doc){
+      return false;
+    }
+  });
 });

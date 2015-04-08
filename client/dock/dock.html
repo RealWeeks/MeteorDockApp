@@ -1,5 +1,27 @@
 <template name="dock">
-    <div class="page-header">
+  <div class="page-header">
     <h1>Hello from the Dock</h1>
+    <h4>Online Users</h4>
+    <ul class="unstyled onlusers">
+      {{#each onlusr}}
+        <li class="user">test<a href="#">{{username}}</a></li>
+      {{/each}}
+    </ul>
   </div>
+  <div class="jumbotron">
+    <div class="container">
+      {{>messages}}
+    </div>
+  </div>
+</template>
+
+<template name="messages">
+YO!
+  {{#each msgs}}
+    <strong>{{name}}</strong> {{text}}<br>
+  {{/each}}
+</template>
+
+<template name="input">
+  <h5>Message: <input type="text" id="message"></h5>
 </template>
