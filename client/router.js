@@ -11,3 +11,5 @@ Router.route('/Dock');
 Router.route('/Profile');
 
 Router.route('/Login');
+
+Router.route('/s3tester');

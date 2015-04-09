@@ -63,3 +63,10 @@ Meteor.methods({
   }
 });
 //inc increases or decresed field by 1
+
+
+Meteor.methods({
+  addUrl:function(url){
+    Comments.update(commentId);
+  }
+});
