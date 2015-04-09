@@ -20,6 +20,7 @@ Meteor.publish("onlusers",function(){
 
 
 Meteor.methods({
+  // comments
   'addComment':function(options){
     var comment = {
       text:options.text,
@@ -34,6 +35,21 @@ Meteor.methods({
   },
   'removeAllComments': function(){
     Comments.remove({});
+  },
+  // this is for voting
+  'incrementYesVotes' : function(commentId){
+    console.log(commentId);
+    Comments.update(commentId,{$inc : {'yes':1}});
+  },
+  'incrementNoVotes' : function(commentId){
+    console.log(commentId);
+    Comments.update(commentId,{$inc : {'no':1}});
+  },
+  // this is for amazon images attached to users
+  'addUrl': function(url){
+    console.log(url);
+    // we need access to the current user on the server so we can save the url to the image on the user's object
+    // Comments.update(commentId);
   }
 });
 
@@ -52,7 +68,7 @@ Meteor.startup(function(){
   });
 });
 
-Meteor.methods({
+/*Meteor.methods({
   incrementYesVotes : function(commentId){
     console.log(commentId);
     Comments.update(commentId,{$inc : {'yes':1}});
@@ -61,12 +77,14 @@ Meteor.methods({
     console.log(commentId);
     Comments.update(commentId,{$inc : {'no':1}});
   }
-});
+});*/
 //inc increases or decresed field by 1
 
 
-Meteor.methods({
+/*Meteor.methods({
   addUrl:function(url){
-    Comments.update(commentId);
+    debugger;
+    // Comments.update(commentId);
   }
 });
+*/
