@@ -46,10 +46,13 @@ Meteor.methods({
     Comments.update(commentId,{$inc : {'no':1}});
   },
   // this is for amazon images attached to users
-  'addUrl': function(url){
+  'addUrl' : function(url){
     console.log(url);
+    Meteor.users.update({_id:Meteor.user()._id}, { $set: {'url':url}});
+        console.log('inside addurl');
+
     // we need access to the current user on the server so we can save the url to the image on the user's object
-    // Comments.update(commentId);
+    // Can return a value
   }
 });
 
@@ -83,7 +86,6 @@ Meteor.startup(function(){
 
 /*Meteor.methods({
   addUrl:function(url){
-    debugger;
     // Comments.update(commentId);
   }
 });

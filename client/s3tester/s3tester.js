@@ -1,3 +1,7 @@
+Deps.autorun(function(){
+  Meteor.subscribe("userData");
+});
+
 Template.s3tester.events({
   "click button.upload": function(){
     var files = $("input.file_bag")[0].files;
@@ -8,7 +12,9 @@ Template.s3tester.events({
     },function(e,r){
       console.log(r);
       var url = r.url;
-      Meteor.call('addUrl', url);
+      Meteor.call('addUrl',url, function(e,r){
+        $('#my_image').attr("src",(Meteor.user().url));
+      });
     });
   }
 });
@@ -18,3 +24,12 @@ Template.s3tester.helpers({
     return S3.collection.find();
   }
 });
+
+// Template.s3tester.helpers({
+//   'img':function(){
+//     // Tracker.flush();
+//     Meteor.defer(function(){
+
+//     });
+//   }
+// });
