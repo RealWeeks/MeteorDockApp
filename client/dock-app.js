@@ -1,23 +1,7 @@
-// if (Meteor.isClient) {
-//   // counter starts at 0
-//   Session.setDefault('counter', 0);
-
-//   Template.hello.helpers({
-//     counter: function () {
-//       return Session.get('counter');
-//     }
-//   });
-
-//   Template.hello.events({
-//     'click button': function () {
-//       // increment the counter when button is clicked
-//       Session.set('counter', Session.get('counter') + 1);
-//     }
-//   });
-// }
-
-// if (Meteor.isServer) {
-//   Meteor.startup(function () {
-//     // code to run on server at startup
-//   });
-// }
+if (Meteor.isClient) {
+  Handlebars.registerHelper('profile_pic',function(input){
+  var profPic = Meteor.user().url;
+  Session.set("profile_pic", profPic);
+  return Session.get("profile_pic");
+  });
+}

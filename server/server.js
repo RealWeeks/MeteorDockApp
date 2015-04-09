@@ -1,8 +1,8 @@
-// Meteor.methods({
-//   'getNews':function(subject){
-//     return Meteor.http.call('GET', 'http://content.guardianapis.com/search?api-key=test&q='+ subject);
-//   }
-// });
+Meteor.methods({
+  'getNews':function(subject){
+    return Meteor.http.call('GET', 'http://content.guardianapis.com/search?api-key=test&q='+ subject);
+  }
+});
 
 //instead of inscure
 Meteor.publish("comments", function(userid){
@@ -18,6 +18,9 @@ Meteor.publish("onlusers",function(){
   return Meteor.users.find({"status.online":true},{username:1});
 });
 
+Meteor.publish("profile_pic",function(){
+  return Session.get("profile_pic");
+});
 
 Meteor.methods({
   // comments
@@ -50,9 +53,6 @@ Meteor.methods({
     console.log(url);
     Meteor.users.update({_id:Meteor.user()._id}, { $set: {'url':url}});
         console.log('inside addurl');
-
-    // we need access to the current user on the server so we can save the url to the image on the user's object
-    // Can return a value
   }
 });
 

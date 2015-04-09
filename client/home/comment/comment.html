@@ -2,7 +2,7 @@
 
   <div class="media">
     <a class="pull-left" href="#">
-      <img width="50px" src="max_b.jpg" class="media-object" data-src="{{owner}}.js/64x64">
+      <img width="50px" src="{{profile_pic}}" class="media-object" data-src="{{owner}}.js/64x64">
     </a>
     <div class="media-body">
       <h5>{{currentUser.username}}</h5>
@@ -29,7 +29,7 @@
 <template name="commentcomment">
   <div class="well">
     <a class="pull-left" href="/user">
-      <img src="jason_smile.jpg" width="30px" class="img-rounded" alt="#" />
+      <img src="{{profile_pic}}" width="30px" class="img-rounded" alt="#" />
     </a>
     <h5 class="commentUser">{{currentUser.username}}</h5>
     <p class="commentText">{{text}}</p>

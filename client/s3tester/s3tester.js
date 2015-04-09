@@ -1,5 +1,6 @@
 Deps.autorun(function(){
   Meteor.subscribe("userData");
+  Meteor.subscribe("profile_pic");
 });
 
 Template.s3tester.events({
@@ -14,6 +15,8 @@ Template.s3tester.events({
       var url = r.url;
       Meteor.call('addUrl',url, function(e,r){
         $('#my_image').attr("src",(Meteor.user().url));
+        Session.set("profile_pic", (Meteor.user().url));
+        localStorage.setItem('profile_pic', (Meteor.user().url));
       });
     });
   }

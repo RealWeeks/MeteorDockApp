@@ -3,7 +3,12 @@
     <button class="upload">Upload</button>
 
     {{#each files}}
-        <p>{{percent_uploaded}}</p>
+
+  <div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="{{percent_uploaded}}" aria-valuemin="0" aria-valuemax="60" style="width: 100%;">
+    {{percent_uploaded}}
+  </div>
+</div>
     {{/each}}
-    <img id="my_image" src="max_b.jpg"/>
+    <img id="my_image" src="{{profile_pic}}"/>
 </template>
