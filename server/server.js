@@ -48,6 +48,20 @@ Meteor.methods({
     console.log(commentId);
     Comments.update(commentId,{$inc : {'no':1}});
   },
+// for comment voting
+  'incrementCommentYesVotes' : function(commentcommentId){
+    console.log(commentcommentId);
+    Comments.update(commentcommentId,{$inc : {'Cyes':1}});
+  },
+  'incrementCommentNoVotes' : function(commentcommentId){
+    console.log(commentcommentId);
+    Comments.update(commentcommentId,{$inc : {'Cno':1}});
+  },
+
+
+
+
+
   // this is for amazon images attached to users
   'addUrl' : function(url){
     console.log(url);
