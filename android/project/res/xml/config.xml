@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.id662ajnt3pu3s3xe30e" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="FileTransfer">
+        <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="CordovaUpdate">
+        <param name="android-package" value="com.meteor.cordova.updater.CordovaUpdatePlugin" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <icon height="36" src="resources/android_ldpi.icon.png" width="36" />
+    <icon height="42" src="resources/android_mdpi.icon.png" width="42" />
+    <icon height="72" src="resources/android_hdpi.icon.png" width="72" />
+    <icon height="96" src="resources/android_xhdpi.icon.png" width="96" />
+    <splash density="port-ldpi" height="426" src="resources/android_ldpi_portrait.splash.png" width="320" />
+    <splash density="land-ldpi" height="320" src="resources/android_ldpi_landscape.splash.png" width="426" />
+    <splash density="port-mdpi" height="470" src="resources/android_mdpi_portrait.splash.png" width="320" />
+    <splash density="land-mdpi" height="320" src="resources/android_mdpi_landscape.splash.png" width="470" />
+    <splash density="port-hdpi" height="640" src="resources/android_hdpi_portrait.splash.png" width="480" />
+    <splash density="land-hdpi" height="480" src="resources/android_hdpi_landscape.splash.png" width="640" />
+    <splash density="port-xhdpi" height="960" src="resources/android_xhdpi_portrait.splash.png" width="720" />
+    <splash density="land-xhdpi" height="720" src="resources/android_xhdpi_landscape.splash.png" width="960" />
+    <name>dock-app</name>
+    <description>New Meteor Mobile App</description>
+    <author email="n/a" href="n/a">A Meteor Developer</author>
+    <preference name="webviewbounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="AutoHideSplashScreen" value="false" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="10000" />
+    <content src="index.html" />
+    <access launch-external="true" origin="tel:*" />
+    <access launch-external="true" origin="geo:*" />
+    <access launch-external="true" origin="mailto:*" />
+    <access launch-external="true" origin="sms:*" />
+    <access launch-external="true" origin="market:*" />
+    <access origin="file:*" />
+    <access origin="cdv:*" />
+    <access origin="gap:*" />
+    <access origin="http://meteor.local/*" />
+    <access origin="*://dockapp.meteor.com/*" />
+</widget>
