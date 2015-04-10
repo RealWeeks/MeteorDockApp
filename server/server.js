@@ -1,6 +1,9 @@
 Meteor.methods({
   'getNews':function(subject){
     return Meteor.http.call('GET', 'http://content.guardianapis.com/search?api-key=test&q='+ subject);
+  },
+  'getWeather':function(){
+    return Meteor.http.call('GET', 'http://api.openweathermap.org/data/2.5/weather?q=Boston,ma');
   }
 });
 
