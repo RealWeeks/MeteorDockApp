@@ -1,10 +1,17 @@
 <template name="login">
     {{#if currentUser}}
-        {{currentUser.profile.name}} -
-        {{currentUser._id}} -
-        {{showAvatar}}
-        <button id="logout">Logout</button>
-    {{else}}
-        <button id="facebook-login" class="btn btn-default"> Login with Facebook</button>
+      <div class="jumbotron">
+        <div class="container">
+          <a href="{{pathFor 'Home'}}"><h1>Click Here to Proceed</h1></a>
+        </div>
+      </div>
     {{/if}}
+  <div class="page-header">
+    <h1>Looks like you're not logged in</h1><br>
+    <small>Give it a shot... No one knows who you are</small>
+  </div>
+  <div class="jumbotron">
+    {{> loginButtons}}
+  </div>
+
 </template>

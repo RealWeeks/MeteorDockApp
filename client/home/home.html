@@ -1,12 +1,15 @@
 <template name="home">
   <div class="page-header">
-    <h1>Today's Topic</h1>
-      <h2>WDI Final Projects</h2><br>
-      <small>Share your thoughts below</small>
+    <h1>Let's shoot the shit</h1> {{> loginButtons}}
+      <h3>Talk about anything you want</h3><br>
+      <small>Talk about anything you want no one knows who you are</small><br>
+      <small>no one cares...</small>
   </div>
   {{#if currentUser}}
   <div class="well well-large">
-    <label for="commenttext">Comment</label>
+    <label for="commenttext">Comment {{currentUser.username}}... don't be afraid</label><br>
+    <small>Want to troll? How about downvote the next great idea?</small><br>
+    <small>no one cares...</small>
     <input placeholder="What do you think?" class="input-large commenttext" type="text" name="commenttext" value="" id="commenttext">
   </div>
   {{/if}}

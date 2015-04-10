@@ -13,3 +13,7 @@ Router.route('/Profile');
 Router.route('/Login');
 
 Router.route('/s3tester');
+
+Router.route('/', function () {
+  this.render('/Home');
+});

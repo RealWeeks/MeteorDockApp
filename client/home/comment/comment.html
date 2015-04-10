@@ -1,11 +1,11 @@
 <template name="comment">
 
   <div class="media">
-    <a class="pull-left" href="#">
-      <img width="50px" src="{{profile_pic}}" class="media-object" data-src="{{owner}}.js/64x64">
+    <a class="pull-left">
+      <img width="50px" src="{{profile_pic}}" class="media-object" >
     </a>
     <div class="media-body">
-      <h5>{{currentUser.username}}</h5>
+      <h5>Someone on the internet says...</h5>
       <p>{{text}}</p>
       {{#if currentUser}}
         <a class="btn btn-xs btn-success yes" href="#"><i class="glyphicon glyphicon-thumbs-up"></i> Yes {{yes}}</a>
@@ -28,10 +28,10 @@
 
 <template name="commentcomment">
   <div class="well">
-    <a class="pull-left" href="/user">
-      <img src="{{profile_pic}}" width="30px" class="img-rounded" alt="#" />
+    <a class="pull-left" >
+      <img src="{{profile_pic}}" width="30px" class="img-rounded" />
     </a>
-    <h5 class="commentUser">{{currentUser.username}}</h5>
+    <h5 class="commentUser">Random Person</h5>
     <p class="commentText">{{text}}</p>
   </div>
 </template>

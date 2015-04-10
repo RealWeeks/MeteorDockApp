@@ -7,7 +7,7 @@ Template.home.rendered = function(){
 };
 
 Template.home.comments = function(){
-  return Comments.find({parent:null}, {sort:{yes:-1, date:-1}});
+  return Comments.find({parent:null}, {sort:{yes:-1, no:1, date:-1}});
   //find and sort by date
 };
 
