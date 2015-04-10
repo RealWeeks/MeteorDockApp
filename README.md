@@ -1,6 +1,7 @@
 # MeteorDockApp
 WDI Final Project
 An anonymous place chat
+Used Meteor JS.  Also an android app
 
 ####Purpose
 To learn meteor as well as create a final project for WDI
